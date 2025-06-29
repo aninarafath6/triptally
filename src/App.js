@@ -104,16 +104,15 @@ Calculated with Trip Tally 🚗`;
       
       {/* Sticky Glassmorphic Header */}
       <div className="sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-500" style={{
-        backgroundColor: isDarkMode ? 'rgba(20, 20, 20, 0.8)' : 'rgba(255, 255, 255, 0.8)',
-        borderBottomColor: isDarkMode ? '#1D1D1D' : '#E2E8F0',
-        boxShadow: isDarkMode ? '0 4px 6px -1px rgba(0, 0, 0, 0.3)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+        backgroundColor: isDarkMode ? 'rgba(10, 10, 10, 0.8)' : 'rgba(248, 250, 252, 0.8)',
+        borderBottomColor: isDarkMode ? '#1D1D1D' : '#E2E8F0'
       }}>
-        <div className="px-6 py-4">
+        <div className="px-6 pt-8 pb-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center backdrop-blur-sm" style={{
-                backgroundColor: isDarkMode ? 'rgba(31, 31, 31, 0.8)' : 'rgba(255, 255, 255, 0.8)',
-                border: isDarkMode ? '1px solid rgba(45, 45, 45, 0.5)' : '1px solid rgba(226, 232, 240, 0.5)'
+                backgroundColor: isDarkMode ? 'rgba(20, 20, 20, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+                border: isDarkMode ? '1px solid rgba(29, 29, 29, 0.5)' : '1px solid rgba(226, 232, 240, 0.5)'
               }}>
                 <Calculator className="h-5 w-5 text-orange-500" />
               </div>
@@ -135,18 +134,18 @@ Calculated with Trip Tally 🚗`;
               onClick={toggleTheme}
               className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
               style={{
-                backgroundColor: isDarkMode ? 'rgba(31, 31, 31, 0.8)' : 'rgba(255, 255, 255, 0.8)',
-                border: isDarkMode ? '1px solid rgba(45, 45, 45, 0.5)' : '1px solid rgba(226, 232, 240, 0.5)'
+                backgroundColor: isDarkMode ? 'rgba(20, 20, 20, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+                border: isDarkMode ? '1px solid rgba(29, 29, 29, 0.5)' : '1px solid rgba(226, 232, 240, 0.5)'
               }}
               onMouseEnter={(e) => {
                 if (isDarkMode) {
-                  e.target.style.backgroundColor = 'rgba(47, 47, 47, 0.9)';
+                  e.target.style.backgroundColor = 'rgba(31, 31, 31, 0.9)';
                 } else {
                   e.target.style.backgroundColor = 'rgba(241, 245, 249, 0.9)';
                 }
               }}
               onMouseLeave={(e) => {
-                e.target.style.backgroundColor = isDarkMode ? 'rgba(31, 31, 31, 0.8)' : 'rgba(255, 255, 255, 0.8)';
+                e.target.style.backgroundColor = isDarkMode ? 'rgba(20, 20, 20, 0.8)' : 'rgba(255, 255, 255, 0.8)';
               }}
             >
               {isDarkMode ? 
