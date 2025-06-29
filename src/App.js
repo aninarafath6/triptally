@@ -217,7 +217,7 @@ Calculated with Trip Tally 🚗`;
                   <span className={`text-sm font-medium ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>
-                    People
+                    Number of Travelers
                   </span>
                 </div>
                 <input
@@ -242,10 +242,10 @@ Calculated with Trip Tally 🚗`;
                   boxShadow: isDarkMode ? 'none' : '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
                 }}>
                   <div className="flex items-center space-x-2 mb-3">
-                    <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
                       backgroundColor: isDarkMode ? '#1F1F1F' : '#F1F5F9'
                     }}>
-                      <Fuel className="h-3 w-3 text-orange-500" />
+                      <Fuel className="h-4 w-4 text-orange-500" />
                     </div>
                     <span className={`text-xs font-medium ${
                       isDarkMode ? 'text-gray-300' : 'text-gray-700'
@@ -264,7 +264,7 @@ Calculated with Trip Tally 🚗`;
                     }`}
                   />
                   <div className={`text-xs mt-1 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-                    km/l
+                    km/L
                   </div>
                 </div>
 
@@ -274,15 +274,15 @@ Calculated with Trip Tally 🚗`;
                   boxShadow: isDarkMode ? 'none' : '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
                 }}>
                   <div className="flex items-center space-x-2 mb-3">
-                    <div className="w-6 h-6 rounded-lg flex items-center justify-center" style={{
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
                       backgroundColor: isDarkMode ? '#1F1F1F' : '#F9FAFB'
                     }}>
-                      <IndianRupee className="h-3 w-3 text-orange-500" />
+                      <IndianRupee className="h-4 w-4 text-orange-500" />
                     </div>
                     <span className={`text-xs font-medium ${
                       isDarkMode ? 'text-gray-300' : 'text-gray-700'
                     }`}>
-                      Price
+                      Fuel Price
                     </span>
                   </div>
                   <input
