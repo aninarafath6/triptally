@@ -17,6 +17,12 @@ export default function TripTally() {
   const mileageRef = React.useRef(null);
   const fuelPriceRef = React.useRef(null);
 
+  // State for focused card only
+  const [focusedCard, setFocusedCard] = useState(null);
+
+  // Helper to determine if a card should be highlighted
+  const isCardActive = (card) => focusedCard === card;
+
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
@@ -155,23 +161,13 @@ Calculated with Trip Tally 🚗`;
               
               {/* Trip Name Input */}
               <div 
-                className="rounded-lg p-4 cursor-pointer transition-all duration-200 hover:bg-opacity-80" 
+                className={`rounded-lg p-4 cursor-pointer transition-all duration-200 ${isCardActive('tripName') ? (isDarkMode ? 'ring-2 ring-orange-500 bg-[#18120b]' : 'ring-2 ring-orange-500 bg-orange-50') : ''}`} 
                 style={{
                   backgroundColor: isDarkMode ? '#141414' : '#FFFFFF',
                   border: `1px solid ${isDarkMode ? '#1D1D1D' : '#E2E8F0'}`,
                   boxShadow: isDarkMode ? 'none' : '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
                 }}
                 onClick={() => tripNameRef.current?.focus()}
-                onMouseEnter={(e) => {
-                  if (isDarkMode) {
-                    e.target.style.backgroundColor = '#1F1F1F';
-                  } else {
-                    e.target.style.backgroundColor = '#F8FAFC';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = isDarkMode ? '#141414' : '#FFFFFF';
-                }}
               >
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
@@ -194,6 +190,9 @@ Calculated with Trip Tally 🚗`;
                     isDarkMode ? 'text-white' : 'text-slate-800'
                   }`}
                   ref={tripNameRef}
+                  style={{ outline: 'none' }}
+                  onFocus={() => setFocusedCard('tripName')}
+                  onBlur={() => setFocusedCard(null)}
                 />
                 <div className={`text-xs mt-1 ${isDarkMode ? 'text-gray-500' : 'text-slate-400'}`}>
                   optional
@@ -202,23 +201,13 @@ Calculated with Trip Tally 🚗`;
               
               {/* Distance Input */}
               <div 
-                className="rounded-lg p-4 cursor-pointer transition-all duration-200 hover:bg-opacity-80" 
+                className={`rounded-lg p-4 cursor-pointer transition-all duration-200 ${isCardActive('distance') ? (isDarkMode ? 'ring-2 ring-orange-500 bg-[#18120b]' : 'ring-2 ring-orange-500 bg-orange-50') : ''}`} 
                 style={{
                   backgroundColor: isDarkMode ? '#141414' : '#FFFFFF',
                   border: `1px solid ${isDarkMode ? '#1D1D1D' : '#E2E8F0'}`,
                   boxShadow: isDarkMode ? 'none' : '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
                 }}
                 onClick={() => totalKmRef.current?.focus()}
-                onMouseEnter={(e) => {
-                  if (isDarkMode) {
-                    e.target.style.backgroundColor = '#1F1F1F';
-                  } else {
-                    e.target.style.backgroundColor = '#F8FAFC';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = isDarkMode ? '#141414' : '#FFFFFF';
-                }}
               >
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
@@ -241,6 +230,9 @@ Calculated with Trip Tally 🚗`;
                     isDarkMode ? 'text-white' : 'text-gray-900'
                   }`}
                   ref={totalKmRef}
+                  style={{ outline: 'none' }}
+                  onFocus={() => setFocusedCard('distance')}
+                  onBlur={() => setFocusedCard(null)}
                 />
                 <div className={`text-xs mt-1 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>
                   kilometers
@@ -249,23 +241,13 @@ Calculated with Trip Tally 🚗`;
 
               {/* People Count Input */}
               <div 
-                className="rounded-lg p-4 cursor-pointer transition-all duration-200 hover:bg-opacity-80" 
+                className={`rounded-lg p-4 cursor-pointer transition-all duration-200 ${isCardActive('people') ? (isDarkMode ? 'ring-2 ring-orange-500 bg-[#18120b]' : 'ring-2 ring-orange-500 bg-orange-50') : ''}`} 
                 style={{
                   backgroundColor: isDarkMode ? '#141414' : '#FFFFFF',
                   border: `1px solid ${isDarkMode ? '#1D1D1D' : '#E2E8F0'}`,
                   boxShadow: isDarkMode ? 'none' : '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
                 }}
                 onClick={() => peopleCountRef.current?.focus()}
-                onMouseEnter={(e) => {
-                  if (isDarkMode) {
-                    e.target.style.backgroundColor = '#1F1F1F';
-                  } else {
-                    e.target.style.backgroundColor = '#F8FAFC';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = isDarkMode ? '#141414' : '#FFFFFF';
-                }}
               >
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
@@ -288,6 +270,9 @@ Calculated with Trip Tally 🚗`;
                     isDarkMode ? 'text-white' : 'text-gray-900'
                   }`}
                   ref={peopleCountRef}
+                  style={{ outline: 'none' }}
+                  onFocus={() => setFocusedCard('people')}
+                  onBlur={() => setFocusedCard(null)}
                 />
                 <div className={`text-xs mt-1 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>
                   passengers
@@ -297,23 +282,13 @@ Calculated with Trip Tally 🚗`;
               {/* Mileage and Fuel Price Grid */}
               <div className="grid grid-cols-2 gap-4">
                 <div 
-                  className="rounded-lg p-4 cursor-pointer transition-all duration-200 hover:bg-opacity-80" 
+                  className={`rounded-lg p-4 cursor-pointer transition-all duration-200 ${isCardActive('mileage') ? (isDarkMode ? 'ring-2 ring-orange-500 bg-[#18120b]' : 'ring-2 ring-orange-500 bg-orange-50') : ''}`} 
                   style={{
                     backgroundColor: isDarkMode ? '#141414' : '#FFFFFF',
                     border: `1px solid ${isDarkMode ? '#1D1D1D' : '#E2E8F0'}`,
                     boxShadow: isDarkMode ? 'none' : '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
                   }}
                   onClick={() => mileageRef.current?.focus()}
-                  onMouseEnter={(e) => {
-                    if (isDarkMode) {
-                      e.target.style.backgroundColor = '#1F1F1F';
-                    } else {
-                      e.target.style.backgroundColor = '#F8FAFC';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = isDarkMode ? '#141414' : '#FFFFFF';
-                  }}
                 >
                   <div className="flex items-center space-x-2 mb-3">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
@@ -337,6 +312,9 @@ Calculated with Trip Tally 🚗`;
                       isDarkMode ? 'text-white' : 'text-gray-900'
                     }`}
                     ref={mileageRef}
+                    style={{ outline: 'none' }}
+                    onFocus={() => setFocusedCard('mileage')}
+                    onBlur={() => setFocusedCard(null)}
                   />
                   <div className={`text-xs mt-1 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>
                     km/L
@@ -344,23 +322,13 @@ Calculated with Trip Tally 🚗`;
                 </div>
 
                 <div 
-                  className="rounded-lg p-4 cursor-pointer transition-all duration-200 hover:bg-opacity-80" 
+                  className={`rounded-lg p-4 cursor-pointer transition-all duration-200 ${isCardActive('fuelPrice') ? (isDarkMode ? 'ring-2 ring-orange-500 bg-[#18120b]' : 'ring-2 ring-orange-500 bg-orange-50') : ''}`} 
                   style={{
                     backgroundColor: isDarkMode ? '#141414' : '#FFFFFF',
                     border: `1px solid ${isDarkMode ? '#1D1D1D' : '#E2E8F0'}`,
                     boxShadow: isDarkMode ? 'none' : '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
                   }}
                   onClick={() => fuelPriceRef.current?.focus()}
-                  onMouseEnter={(e) => {
-                    if (isDarkMode) {
-                      e.target.style.backgroundColor = '#1F1F1F';
-                    } else {
-                      e.target.style.backgroundColor = '#F8FAFC';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = isDarkMode ? '#141414' : '#FFFFFF';
-                  }}
                 >
                   <div className="flex items-center space-x-2 mb-3">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
@@ -384,6 +352,9 @@ Calculated with Trip Tally 🚗`;
                       isDarkMode ? 'text-white' : 'text-gray-900'
                     }`}
                     ref={fuelPriceRef}
+                    style={{ outline: 'none' }}
+                    onFocus={() => setFocusedCard('fuelPrice')}
+                    onBlur={() => setFocusedCard(null)}
                   />
                   <div className={`text-xs mt-1 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>
                     ₹/liter
