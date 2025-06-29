@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sun, Moon, Calculator, RotateCcw, Car, Users, Fuel, IndianRupee, ArrowRight, Share2, MapPin, Route } from 'lucide-react';
+import { Sun, Moon, Calculator, RotateCcw, Users, Fuel, IndianRupee, ArrowRight, Share2, MapPin, Route } from 'lucide-react';
 
 export default function TripTally() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -85,11 +85,11 @@ Calculated with Trip Tally 🚗`;
   const isFormValid = totalKm && peopleCount && mileage && fuelPrice;
 
   return (
-    <div className="min-h-screen transition-all duration-500" style={{
+    <div className="min-h-screen flex flex-col transition-all duration-500" style={{
       backgroundColor: isDarkMode ? '#0A0A0A' : '#F8FAFC'
     }}>
       
-      <div className="px-6 pb-8">
+      <div className="flex-1 px-6 pb-8">
         
         {/* Header */}
         <div className="mb-8 pt-8 pb-6" style={{
@@ -97,6 +97,11 @@ Calculated with Trip Tally 🚗`;
         }}>
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{
+                backgroundColor: isDarkMode ? '#141414' : '#FFFFFF'
+              }}>
+                <Calculator className="h-5 w-5 text-orange-500" />
+              </div>
               <h1 className={`text-3xl font-bold tracking-wide ${
                 isDarkMode ? 'text-white' : 'text-slate-800'
               }`} style={{
@@ -203,7 +208,8 @@ Calculated with Trip Tally 🚗`;
               {/* People Count Input */}
               <div className="rounded-lg p-4" style={{
                 backgroundColor: isDarkMode ? '#141414' : '#FFFFFF',
-                border: `1px solid ${isDarkMode ? '#1D1D1D' : '#e5e7eb'}`
+                border: `1px solid ${isDarkMode ? '#1D1D1D' : '#E2E8F0'}`,
+                boxShadow: isDarkMode ? 'none' : '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
               }}>
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
@@ -214,7 +220,7 @@ Calculated with Trip Tally 🚗`;
                   <span className={`text-sm font-medium ${
                     isDarkMode ? 'text-gray-300' : 'text-gray-700'
                   }`}>
-                    Number of Travelers
+                    People
                   </span>
                 </div>
                 <input
@@ -227,12 +233,12 @@ Calculated with Trip Tally 🚗`;
                   }`}
                 />
                 <div className={`text-xs mt-1 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-                  travelers
+                  passengers
                 </div>
               </div>
 
-              {/* Mileage and Fuel Price Row */}
-              <div className="grid grid-cols-2 gap-3">
+              {/* Mileage and Fuel Price Grid */}
+              <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-lg p-4" style={{
                   backgroundColor: isDarkMode ? '#141414' : '#FFFFFF',
                   border: `1px solid ${isDarkMode ? '#1D1D1D' : '#E2E8F0'}`,
@@ -240,7 +246,7 @@ Calculated with Trip Tally 🚗`;
                 }}>
                   <div className="flex items-center space-x-2 mb-3">
                     <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{
-                      backgroundColor: isDarkMode ? '#1F1F1F' : '#F1F5F9'
+                      backgroundColor: isDarkMode ? '#1F1F1F' : '#F9FAFB'
                     }}>
                       <Fuel className="h-4 w-4 text-orange-500" />
                     </div>
@@ -442,6 +448,23 @@ Calculated with Trip Tally 🚗`;
             </div>
           </div>
         )}
+      </div>
+      
+      {/* Footer */}
+      <div className="px-6 pb-8">
+        <div className="text-center">
+          <p className={`text-sm ${isDarkMode ? 'text-gray-500' : 'text-slate-400'}`}>
+            Made with ❤️ by{' '}
+            <a 
+              href="https://www.linkedin.com/in/anin-arafath" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-orange-500 hover:text-orange-400 transition-colors duration-200 font-medium"
+            >
+              aninarafath
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );
