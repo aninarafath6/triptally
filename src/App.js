@@ -97,15 +97,12 @@ Calculated with Trip Tally 🚗`;
         }}>
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{
-                backgroundColor: isDarkMode ? '#141414' : '#FFFFFF'
-              }}>
-                <Car className="h-5 w-5 text-orange-500" />
-              </div>
-              <h1 className={`text-xl font-semibold tracking-tight ${
+              <h1 className={`text-3xl font-bold tracking-wide ${
                 isDarkMode ? 'text-white' : 'text-slate-800'
-              }`}>
-                Trip Tally
+              }`} style={{
+                fontFamily: "'Dancing Script', cursive"
+              }}>
+                Trip Tally<span className="text-orange-500">.</span>
               </h1>
             </div>
             
