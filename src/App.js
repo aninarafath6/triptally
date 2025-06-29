@@ -89,17 +89,6 @@ Calculated with Trip Tally 🚗`;
       backgroundColor: isDarkMode ? '#0A0A0A' : '#F8FAFC'
     }}>
       
-      {/* Status Bar Simulation */}
-      <div className={`h-11 flex items-center justify-center text-xs font-medium ${
-        isDarkMode ? 'text-gray-300' : 'text-slate-600'
-      }`}>
-        <div className="flex items-center space-x-1">
-          <div className="w-1 h-1 rounded-full bg-current"></div>
-          <div className="w-1 h-1 rounded-full bg-current"></div>
-          <div className="w-1 h-1 rounded-full bg-current opacity-50"></div>
-        </div>
-      </div>
-
       <div className="px-6 pb-8">
         
         {/* Header */}
