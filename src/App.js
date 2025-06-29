@@ -92,7 +92,7 @@ Calculated with Trip Tally 🚗`;
       <div className="px-6 pb-8">
         
         {/* Header */}
-        <div className="mb-8 pt-2 pb-6" style={{
+        <div className="mb-8 pt-8 pb-6" style={{
           borderBottom: `1px solid ${isDarkMode ? '#1D1D1D' : '#E2E8F0'}`
         }}>
           <div className="flex items-center justify-between">
