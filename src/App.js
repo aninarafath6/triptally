@@ -102,16 +102,18 @@ Calculated with Trip Tally 🚗`;
       backgroundColor: isDarkMode ? '#0A0A0A' : '#F8FAFC'
     }}>
       
-      <div className="flex-1 px-6 pb-8">
-        
-        {/* Header */}
-        <div className="mb-8 pt-8 pb-6" style={{
-          borderBottom: `1px solid ${isDarkMode ? '#1D1D1D' : '#E2E8F0'}`
-        }}>
+      {/* Sticky Glassmorphic Header */}
+      <div className="sticky top-0 z-50 backdrop-blur-md border-b transition-all duration-500" style={{
+        backgroundColor: isDarkMode ? 'rgba(20, 20, 20, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+        borderBottomColor: isDarkMode ? '#1D1D1D' : '#E2E8F0',
+        boxShadow: isDarkMode ? '0 4px 6px -1px rgba(0, 0, 0, 0.3)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+      }}>
+        <div className="px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{
-                backgroundColor: isDarkMode ? '#141414' : '#FFFFFF'
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center backdrop-blur-sm" style={{
+                backgroundColor: isDarkMode ? 'rgba(31, 31, 31, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+                border: isDarkMode ? '1px solid rgba(45, 45, 45, 0.5)' : '1px solid rgba(226, 232, 240, 0.5)'
               }}>
                 <Calculator className="h-5 w-5 text-orange-500" />
               </div>
@@ -131,20 +133,20 @@ Calculated with Trip Tally 🚗`;
             
             <button
               onClick={toggleTheme}
-              className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-200"
+              className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
               style={{
-                backgroundColor: isDarkMode ? '#141414' : '#FFFFFF',
-                border: isDarkMode ? 'none' : '1px solid #E2E8F0'
+                backgroundColor: isDarkMode ? 'rgba(31, 31, 31, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+                border: isDarkMode ? '1px solid rgba(45, 45, 45, 0.5)' : '1px solid rgba(226, 232, 240, 0.5)'
               }}
               onMouseEnter={(e) => {
                 if (isDarkMode) {
-                  e.target.style.backgroundColor = '#1F1F1F';
+                  e.target.style.backgroundColor = 'rgba(47, 47, 47, 0.9)';
                 } else {
-                  e.target.style.backgroundColor = '#F1F5F9';
+                  e.target.style.backgroundColor = 'rgba(241, 245, 249, 0.9)';
                 }
               }}
               onMouseLeave={(e) => {
-                e.target.style.backgroundColor = isDarkMode ? '#141414' : '#FFFFFF';
+                e.target.style.backgroundColor = isDarkMode ? 'rgba(31, 31, 31, 0.8)' : 'rgba(255, 255, 255, 0.8)';
               }}
             >
               {isDarkMode ? 
@@ -154,7 +156,10 @@ Calculated with Trip Tally 🚗`;
             </button>
           </div>
         </div>
-
+      </div>
+      
+      <div className="flex-1 px-6 pb-8 pt-6">
+        
         {!result ? (
           <div className="space-y-6">
             <div className="space-y-4">
