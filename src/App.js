@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Sun, Moon, Calculator, RotateCcw, Users, Fuel, IndianRupee, ArrowRight, Share2, MapPin, Route } from 'lucide-react';
 
 export default function TripTally() {
@@ -9,6 +9,20 @@ export default function TripTally() {
   const [fuelPrice, setFuelPrice] = useState('');
   const [tripName, setTripName] = useState('');
   const [result, setResult] = useState(null);
+
+  // Basic SEO: set document title and meta description
+  useEffect(() => {
+    const baseTitle = 'Trip Tally – Trip Fuel Cost Splitter';
+    document.title = result?.tripName ? `${result.tripName} | ${baseTitle}` : baseTitle;
+    const description = 'Split trip fuel costs fairly. Calculate fuel needed, total cost, and per-person share for road trips in seconds.';
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'description');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', description);
+  }, [result]);
 
   // Refs for input fields
   const tripNameRef = React.useRef(null);

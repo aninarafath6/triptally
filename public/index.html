@@ -7,14 +7,61 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Trip Tally – Split trip fuel costs fairly. Calculate fuel needed, total cost, and per-person share for road trips in seconds."
     />
+    <link rel="canonical" href="https://triptally.app/" />
+    <meta name="keywords" content="trip cost calculator, fuel split, road trip calculator, per person cost, mileage calculator, fuel cost india" />
+    <meta name="author" content="aninarafath" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Trip Tally – Trip Fuel Cost Splitter" />
+    <meta property="og:description" content="Split fuel costs and calculate per-person shares for your next trip." />
+    <meta property="og:url" content="https://triptally.app/" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Trip Tally – Trip Fuel Cost Splitter" />
+    <meta name="twitter:description" content="Split fuel costs and calculate per-person shares for your next trip." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+
+    <!-- LLM discoverability hints -->
+    <meta name="ai:policy" content="See /ai.txt for instructions to crawlers and LLMs" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- JSON-LD Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Trip Tally",
+        "url": "https://triptally.app/",
+        "description": "Split trip fuel costs fairly. Calculate fuel needed, total cost, and per-person share.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://triptally.app/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Trip Tally",
+        "url": "https://triptally.app/",
+        "logo": "%PUBLIC_URL%/logo512.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/anin-arafath"
+        ]
+      }
+    </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,7 +74,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>React App</title>
+    <title>Trip Tally – Trip Fuel Cost Splitter</title>
+
+    <!-- Vercel Analytics (Web Analytics) -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <!-- Vercel Speed Insights -->
+    <script defer src="/_vercel/speed-insights/script.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

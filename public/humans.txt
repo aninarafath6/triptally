@@ -1,0 +1,11 @@
+/* TEAM */
+Developer: aninarafath
+LinkedIn: https://www.linkedin.com/in/anin-arafath
+
+/* SITE */
+Site: Trip Tally
+URL: https://triptally.app/
+Description: Split trip fuel costs fairly; per-person split and total cost.
+Technology: React, Tailwind CSS
+
+
